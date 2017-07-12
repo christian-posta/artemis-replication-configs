@@ -101,8 +101,8 @@ under the License.
       </ha-policy>
       <connectors>
          <connector name="netty-connector">tcp://ip-172-31-22-53.us-west-1.compute.internal:61616</connector>
-         <!-- connector to the server1 -->
          <connector name="broker0-connector">tcp://ip-172-31-26-242.us-west-1.compute.internal:61616</connector>
+         <connector name="broker2-connector">tcp://ip-172-31-30-52.us-west-1.compute.internal:61616</connector>
       </connectors>
 
       <cluster-connections>
@@ -110,6 +110,7 @@ under the License.
             <connector-ref>netty-connector</connector-ref>
             <static-connectors>
                <connector-ref>broker0-connector</connector-ref>
+               <connector-ref>broker2-connector</connector-ref>
             </static-connectors>
          </cluster-connection>
       </cluster-connections>
