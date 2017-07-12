@@ -1,1 +1,1 @@
-time java -jar activemq.jar producer --brokerUrl 'failover:(tcp://ip-172-31-26-242.us-west-1.compute.internal:61616,tcp://ip-172-31-22-53.us-west-1.compute.internal:61617)' --user admin --password admin --destination queue://TEST --sleep 1000 --messageCount $1
+time java -jar activemq.jar producer --brokerUrl 'failover:(tcp://ip-172-31-26-242.us-west-1.compute.internal:61616,tcp://ip-172-31-22-53.us-west-1.compute.internal:61616)' --user admin --password admin --destination queue://TEST --sleep $1 --messageCount $2
