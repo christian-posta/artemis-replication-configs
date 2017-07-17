@@ -100,7 +100,7 @@ under the License.
       </ha-policy>
 
       <connectors>
-         <connector name="netty-connector">ip-172-31-30-52.us-west-1.compute.internal:61617</connector>
+         <connector name="netty-connector">tcp://ip-172-31-30-52.us-west-1.compute.internal:61617</connector>
          <connector name="broker0-connector">tcp://ip-172-31-26-242.us-west-1.compute.internal:61616</connector>
          <connector name="broker1-connector">tcp://ip-172-31-22-53.us-west-1.compute.internal:61616</connector>
          <connector name="broker2-connector">tcp://ip-172-31-30-52.us-west-1.compute.internal:61616</connector>
