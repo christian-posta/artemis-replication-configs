@@ -92,18 +92,17 @@ under the License.
       <cluster-password>admin</cluster-password>
       <ha-policy>
         <replication>
-          <master>
+          <slave>
             <group-name>one</group-name>
-            <check-for-live-server>true</check-for-live-server>
-          </master>
+          </slave>
         </replication>
       </ha-policy>
 
       <connectors>
-         <connector name="netty-connector">tcp://ip-172-31-26-242.us-west-1.compute.internal:61616</connector>
+         <connector name="netty-connector">tcp://ip-172-31-26-242.us-west-1.compute.internal:61617</connector>
          <connector name="broker1-connector">tcp://ip-172-31-22-53.us-west-1.compute.internal:61616</connector>
          <connector name="broker2-connector">tcp://ip-172-31-30-52.us-west-1.compute.internal:61616</connector>
-         <connector name="broker3-connector">tcp://ip-172-31-26-242.us-west-1.compute.internal:61617</connector>
+         <connector name="broker0-connector">tcp://ip-172-31-26-242.us-west-1.compute.internal:61616</connector>
          <connector name="broker4-connector">tcp://ip-172-31-22-53.us-west-1.compute.internal:61617</connector>
          <connector name="broker5-connector">tcp://ip-172-31-30-52.us-west-1.compute.internal:61617</connector>
       </connectors>
@@ -112,9 +111,9 @@ under the License.
          <cluster-connection name="my-cluster">
             <connector-ref>netty-connector</connector-ref>
             <static-connectors>
+               <connector-ref>broker0-connector</connector-ref>
                <connector-ref>broker1-connector</connector-ref>
                <connector-ref>broker2-connector</connector-ref>
-               <connector-ref>broker3-connector</connector-ref>
                <connector-ref>broker4-connector</connector-ref>
                <connector-ref>broker5-connector</connector-ref>
             </static-connectors>
@@ -129,7 +128,7 @@ under the License.
          <!-- amqpLowCredits: The server will send the # credits specified at amqpCredits at this low mark -->
 
          <!-- Acceptor for every supported protocol -->
-         <acceptor name="artemis">tcp://0.0.0.0:61616?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE;useEpoll=true;amqpCredits=1000;amqpLowCredits=300</acceptor>
+         <acceptor name="artemis">tcp://0.0.0.0:61617?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE;useEpoll=true;amqpCredits=1000;amqpLowCredits=300</acceptor>
 
       </acceptors>
 
