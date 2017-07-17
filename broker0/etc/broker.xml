@@ -94,6 +94,8 @@ under the License.
         <replication>
           <master>
             <group-name>one</group-name>
+            <quorum-size>2</quorum-size>
+            <vote-on-replication-failure>true</vote-on-replication-failure>
             <check-for-live-server>true</check-for-live-server>
           </master>
         </replication>

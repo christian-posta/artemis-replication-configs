@@ -94,6 +94,7 @@ under the License.
         <replication>
           <slave>
             <group-name>three</group-name>
+            <quorum-size>2</quorum-size>
           </slave>
         </replication>
       </ha-policy>
