@@ -92,18 +92,19 @@ under the License.
       <cluster-password>admin</cluster-password>
       <ha-policy>
        <replication>
-         <slave>
-               <allow-failback>true</allow-failback>
-               <!-- not needed but tells the backup not to restart after failback as there will be > 0 backups saved -->
-               <max-saved-replicated-journals-size>0</max-saved-replicated-journals-size>
-         </slave>
+         <master>
+           <group-name>three</group-name>
+           <check-for-live-server>true</check-for-live-server> 
+         </master>
        </replication>
       </ha-policy>
       <connectors>
          <connector name="netty-connector">tcp://ip-172-31-30-52.us-west-1.compute.internal:61616</connector>
-         <!-- connector to the server1 -->
          <connector name="broker0-connector">tcp://ip-172-31-26-242.us-west-1.compute.internal:61616</connector>
          <connector name="broker1-connector">tcp://ip-172-31-22-53.us-west-1.compute.internal:61616</connector>
+         <connector name="broker3-connector">tcp://ip-172-31-26-242.us-west-1.compute.internal:61617</connector>
+         <connector name="broker4-connector">tcp://ip-172-31-22-53.us-west-1.compute.internal:61617</connector>
+         <connector name="broker5-connector">tcp://ip-172-31-30-52.us-west-1.compute.internal:61617</connector>
       </connectors>
 
       <cluster-connections>
@@ -112,6 +113,9 @@ under the License.
             <static-connectors>
                <connector-ref>broker0-connector</connector-ref>
                <connector-ref>broker1-connector</connector-ref>
+               <connector-ref>broker3-connector</connector-ref>
+               <connector-ref>broker4-connector</connector-ref>
+               <connector-ref>broker5-connector</connector-ref>
             </static-connectors>
          </cluster-connection>
       </cluster-connections>
