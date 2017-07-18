@@ -15,7 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-ARTEMIS_HOME='/home/ec2-user/amq-broker-7.0.1'
+#ARTEMIS_HOME='/home/ec2-user/amq-broker-7.0.1'
+ARTEMIS_HOME='/home/ec2-user/apache-artemis-2.2.0-SNAPSHOT'
 ARTEMIS_INSTANCE='/home/ec2-user/brokers/broker3'
 
 # Cluster Properties: Used to pass arguments to ActiveMQ Artemis which can be referenced in broker.xml
