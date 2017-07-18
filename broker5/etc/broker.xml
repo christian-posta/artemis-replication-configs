@@ -93,7 +93,7 @@ under the License.
       <ha-policy>
         <replication>
           <slave>
-            <group-name>two</group-name>
+            <group-name>three</group-name>
             <quorum-size>2</quorum-size>
           </slave>
         </replication>
